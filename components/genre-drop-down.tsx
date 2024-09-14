@@ -11,27 +11,29 @@ import {
 
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Link from "next/link";
-
-const genryArray = [
-    {
-        id: 1,
-        name: "Horror",
-    },
-    {
-        id: 2,
-        name: "Comedy",
-    },
-    {
-        id: 3,
-        name: "Fantasy",
-    },
-];
+import { Genres } from "@/type";
 
 interface Props {
     className?: string;
 }
 
-export const GenreDropDown: React.FC<Props> = ({ className }) => {
+export const GenreDropDown: React.FC<Props> = async () => {
+    const url = "https://api.themoviedb.org/3/genre/movie/list?language=en";
+    const options: RequestInit = {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${process.env.TMDB_READ_ACCESS_KEY}`,
+        },
+        next: {
+            revalidate: 60 * 60 * 24,
+        },
+    };
+
+    const response = await fetch(url.toString(), options);
+    const { genres } = (await response.json()) as Genres;
+    console.log(genres);
+
     return (
         <DropdownMenu>
             <DropdownMenuTrigger className="text-white flex items-center text-sm font-medium gap-1">
@@ -39,9 +41,9 @@ export const GenreDropDown: React.FC<Props> = ({ className }) => {
                 <MdOutlineKeyboardArrowDown size={24} />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-                <DropdownMenuSeparator />
                 <DropdownMenuLabel>Select a Genre</DropdownMenuLabel>
-                {genryArray.map((genre) => (
+                <DropdownMenuSeparator />
+                {genres.map((genre) => (
                     <DropdownMenuItem key={genre?.id}>
                         <Link href={`/genre/${genre.id}?genre=${genre.name}`}>
                             {genre?.name}

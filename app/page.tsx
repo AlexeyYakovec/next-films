@@ -1,10 +1,21 @@
-import { Header } from "@/components/header";
+import { CarouselBanner } from "@/components/index";
+import {
+    getNowPlayingMovies,
+    getPopularMovies,
+    getTopRatedMovies,
+    getUpcomingMovies,
+} from "@/lib/getMovies";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+    const nowPlayingMovies = await getNowPlayingMovies();
+    const upComingMovies = await getUpcomingMovies();
+    const topRatedMovies = await getTopRatedMovies();
+    const popularMovies = await getPopularMovies();
+
     return (
         <>
-            <h3>Movie studio for youtube</h3>
+            <CarouselBanner />
         </>
     );
 }

@@ -11,6 +11,7 @@ const nextConfig = {
                 hostname: "i.ibb.co",
             },
         ],
+        domains: ["image.tmdb.org", "i.ibb.co"],
     },
 };
 

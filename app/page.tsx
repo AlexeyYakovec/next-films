@@ -1,4 +1,4 @@
-import { CarouselBanner } from "@/components/index";
+import { CarouselBanner, MovieContainer } from "@/components/index";
 import {
     getNowPlayingMovies,
     getPopularMovies,
@@ -16,6 +16,9 @@ export default async function Home() {
     return (
         <>
             <CarouselBanner />
+            <div className="flex flex-col space-y-2">
+                <MovieContainer movies={nowPlayingMovies} title="Now Playing" />
+            </div>
         </>
     );
 }

@@ -32,7 +32,7 @@ export const GenreDropDown: React.FC<Props> = async () => {
 
     const response = await fetch(url.toString(), options);
     const { genres } = (await response.json()) as Genres;
-    console.log(genres);
+    // console.log(genres);
 
     return (
         <DropdownMenu>

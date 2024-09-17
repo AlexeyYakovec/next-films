@@ -10,7 +10,7 @@ interface Props {
 
 export const CarouselBanner = async ({ id, keywords }: Props) => {
     const movies = await getDiscoverMovies(id, keywords);
-    console.log("movies: ", movies);
+    // console.log("movies: ", movies);
 
     return <HeroCarousel movies={movies} />;
 };

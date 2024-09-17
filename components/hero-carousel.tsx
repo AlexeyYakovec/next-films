@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const HeroCarousel: React.FC<Props> = ({ movies }: Props) => {
-    console.log(movies);
+    // console.log(movies);
 
     const [emblaRef] = useEmblaCarousel({ loop: true, duration: 100 }, [
         Autoplay({ delay: 6000 }),

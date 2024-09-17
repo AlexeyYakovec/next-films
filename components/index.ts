@@ -6,3 +6,4 @@ export { CarouselBanner } from "./carousel-banner";
 export { HeroCarousel } from "./hero-carousel";
 export { MovieContainer } from "./movie-container";
 export { Footer } from "./Footer";
+export { MovieCard } from "./movie-card";

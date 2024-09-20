@@ -1,9 +1,9 @@
 "use client";
 import { Videos } from "@/type";
-import YouTube, { YouTubeProps } from "react-youtube";
+import YouTube, { YouTubeProps, YouTubeEvent } from "react-youtube";
 
 export const VideoPlayer = ({ videos }: Videos) => {
-    const onPlayerReady: YouTubeProps["onReady"] = (event: any) => {
+    const onPlayerReady: YouTubeProps["onReady"] = (event: YouTubeEvent) => {
         event.target.pauseVideo();
     };
     const opts = {

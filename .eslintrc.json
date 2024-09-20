@@ -29,6 +29,7 @@
                 "arrowParens": "always",
                 "endOfLine": "lf"
             }
-        ]
+        ],
+        "@typescript-eslint/no-explicit-any": "off"
     }
 }

@@ -1,14 +1,9 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { PiFilmStripLight } from "react-icons/pi";
 import { SearchInput, ThemeToggle } from "./index";
 import GenreDropDown from "./genre-drop-down";
-
-interface Props {
-    className?: string;
-}
 
 export const Header = () => {
     return (

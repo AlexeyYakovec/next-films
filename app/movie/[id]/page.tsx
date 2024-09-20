@@ -5,7 +5,6 @@ import {
     getMovieVideos,
     getPopularMovies,
 } from "@/lib/getMovies";
-import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 

@@ -1,6 +1,5 @@
 import { MovieContainer } from "@/components/index";
 import { getPopularMovies, getSearchedMovies } from "@/lib/getMovies";
-import { cn } from "@/lib/utils";
 import React from "react";
 
 interface Props {

@@ -1,5 +1,4 @@
 import { getDiscoverMovies } from "@/lib/getMovies";
-import { cn } from "@/lib/utils";
 import React from "react";
 import { HeroCarousel } from "@/components/index";
 

@@ -7,7 +7,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { getImagePath } from "@/lib/getImagePath";
-import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 
 interface Props {
     movies: Movie[];

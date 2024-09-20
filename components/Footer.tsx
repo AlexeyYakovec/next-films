@@ -35,7 +35,6 @@ export const Footer = () => {
             className={cn(
                 "bg-[#191919] px-10 py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10",
             )}>
-            {/* About us */}
             <div>
                 <h2 className="text-base uppercase font-bold text-white tracking-wide border-b border-b-gray-600 py-2 mb-5 relative">
                     about us{" "}
@@ -55,7 +54,6 @@ export const Footer = () => {
                 </p>
             </div>
 
-            {/* Information */}
             <div>
                 <h2 className="text-base uppercase font-bold text-white tracking-wide border-b border-b-gray-600 py-2 mb-5 relative">
                     information
@@ -64,7 +62,6 @@ export const Footer = () => {
                 <Information />
             </div>
 
-            {/* Category */}
             <div>
                 <h2 className="text-base uppercase font-bold text-white tracking-wide border-b border-b-gray-600 py-2 mb-5 relative">
                     Category

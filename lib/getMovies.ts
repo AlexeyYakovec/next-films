@@ -1,5 +1,4 @@
 import { SearchResults } from "@/type";
-
 const fetcher = async (url: URL, cacheTime?: number) => {
     url.searchParams.set("include_adult", "false");
     url.searchParams.set("include_video", "false");
@@ -11,14 +10,17 @@ const fetcher = async (url: URL, cacheTime?: number) => {
         method: "GET",
         headers: {
             accept: "application/json",
-            Authorization: `Bearer ${process.env.TMDB_READ_ACCESS_KEY}`,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_READ_ACCESS_KEY}`,
         },
-        next: {
-            revalidate: cacheTime || 60 * 60 * 24,
-        },
+        // next: {
+        //     revalidate: cacheTime || 60 * 60 * 24,
+        // },
     };
 
     const response = await fetch(url.toString(), options);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const data = (await response.json()) as SearchResults;
 
     return data;

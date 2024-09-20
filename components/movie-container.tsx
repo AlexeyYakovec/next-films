@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { Movie } from "@/type";
 import Link from "next/link";
 import React from "react";
-import { PiFilmStripLight } from "react-icons/pi";
 import { MovieCard } from "./index";
 
 interface Props {
@@ -53,14 +52,14 @@ export const MovieContainer: React.FC<Props> = ({
                               )}>
                               <MovieCard movie={movie} />
                               <div className="max-w-2xl">
-                                  <p className="font-bold text-lg flex gap-2">
+                                  <p className="font-bold text-xl flex gap-2">
                                       {movie?.title}
                                       <span>
                                           ({movie?.release_date.split("-")[0]})
                                       </span>
                                   </p>
                                   <hr className="mb-3 bg-gray-700" />
-                                  <p className="text-base font-normal">
+                                  <p className="text-sm font-normal">
                                       {movie?.overview}
                                   </p>
                               </div>

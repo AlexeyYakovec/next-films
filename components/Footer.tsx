@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import { PiFilmStripLight } from "react-icons/pi";
 import { infoArray, contactArray } from "./models";
-import { Info } from "lucide-react";
 
 const Information = ({ contact }: { contact?: boolean }) => {
     return (
